@@ -11,7 +11,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import com.silvermira.helloworld.databinding.ActivityMainBinding
-import java.lang.String
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             };
 
     private fun countText(): kotlin.String {
-        return "$count Clicks";
+        return String.format(resources.getString(R.string.num_clicks), count);
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,9 +32,28 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        count = 0
         binding.clickButton.setOnClickListener {
             count++;
-            Toast.makeText(this, countText(), Toast.LENGTH_SHORT).show();
+        }
+        binding.rollDiceButton.setOnClickListener{
+            rollDice();
+        }
+    }
+
+    private fun rollDice() {
+        val randomInt = (1..6).random();
+        binding.diceImage.setImageResource(getDrawableByNumber(randomInt));
+    }
+
+    private fun getDrawableByNumber(randomInt: Int): Int {
+        return when (randomInt) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
         }
     }
 
