@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">helloworld</string>
+    <string name="app_name">Dice Roller</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -9,8 +9,15 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="num_clicks">%d Clicks</string>
+    <string name="num_clicks">%1$d Clicks</string>
     <string name="click_me">Click me</string>
-    <string name="roll_dice">Roll dice</string>
+    <string name="welcome">Welcome, %1$s</string>
+    <string name="roll_dice">Roll Dice</string>
     <string name="dice_rolling_result">Dice rolling result</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="update">Update</string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh. Et ligula ullamcorper malesuada proin libero nunc consequat interdum. Adipiscing elit pellentesque habitant morbi tristique senectus et netus et. Mauris vitae ultricies leo integer malesuada nunc. Lorem ipsum dolor sit amet consectetur adipiscing. Convallis aenean et tortor at. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Lobortis feugiat vivamus at augue eget arcu dictum varius. Justo eget magna fermentum iaculis. Semper auctor neque vitae tempus quam pellentesque nec. Varius sit amet mattis vulputate enim. Ante in nibh mauris cursus mattis molestie a iaculis at. Lorem donec massa sapien faucibus et molestie ac feugiat sed. Sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum. Mattis aliquam faucibus purus in massa tempor nec. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Ut ornare lectus sit amet. Sed risus pretium quam vulputate dignissim suspendisse in.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh. Et ligula ullamcorper malesuada proin libero nunc consequat interdum. Adipiscing elit pellentesque habitant morbi tristique senectus et netus et. Mauris vitae ultricies leo integer malesuada nunc. Lorem ipsum dolor sit amet consectetur adipiscing. Convallis aenean et tortor at. Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Lobortis feugiat vivamus at augue eget arcu dictum varius. Justo eget magna fermentum iaculis. Semper auctor neque vitae tempus quam pellentesque nec. Varius sit amet mattis vulputate enim. Ante in nibh mauris cursus mattis molestie a iaculis at. Lorem donec massa sapien faucibus et molestie ac feugiat sed. Sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum. Mattis aliquam faucibus purus in massa tempor nec. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Ut ornare lectus sit amet. Sed risus pretium quam vulputate dignissim suspendisse in.
+    </string>
 </resources>

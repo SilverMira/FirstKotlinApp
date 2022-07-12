@@ -20,8 +20,18 @@ class MainActivity : AppCompatActivity() {
     private var count = 0
             set(value) {
                 field = value;
-                binding.clickCount.text = countText();
+                binding.clickButton.text = countText();
             };
+
+    private var name = ""
+    set(value) {
+        field = value
+        binding.welcomeText.text = welcomeText()
+    }
+
+    private fun welcomeText(): String {
+        return String.format(resources.getString(R.string.welcome), name)
+    }
 
     private fun countText(): kotlin.String {
         return String.format(resources.getString(R.string.num_clicks), count);
@@ -33,12 +43,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         count = 0
+        name = ""
         binding.clickButton.setOnClickListener {
             count++;
         }
         binding.rollDiceButton.setOnClickListener{
             rollDice();
         }
+        binding.updateNameButton.setOnClickListener {
+            updateName();
+        }
+    }
+
+    private fun updateName() {
+        name = binding.nameInput.text.toString()
     }
 
     private fun rollDice() {

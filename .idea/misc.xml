@@ -10,9 +10,10 @@
         <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/drawable/dice_5.xml" value="0.194" />
         <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/drawable/dice_6.xml" value="0.194" />
         <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/drawable/empty_dice.xml" value="0.194" />
-        <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/layout/activity_main.xml" value="0.14350797266514806" />
+        <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/layout/content_main.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/layout/fragment_first.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/layout/fragment_second.xml" value="0.18541666666666667" />
       </map>
     </option>
   </component>
