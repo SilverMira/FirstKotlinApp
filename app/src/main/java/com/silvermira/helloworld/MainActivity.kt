@@ -1,5 +1,6 @@
 package com.silvermira.helloworld
 
+import android.content.Context
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.silvermira.helloworld.databinding.ActivityMainBinding
 
@@ -18,16 +20,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private var count = 0
-            set(value) {
-                field = value;
-                binding.clickButton.text = countText();
-            };
+        set(value) {
+            field = value;
+            binding.clickButton.text = countText();
+        };
 
     private var name = ""
-    set(value) {
-        field = value
-        binding.welcomeText.text = welcomeText()
-    }
+        set(value) {
+            field = value
+            binding.welcomeText.text = welcomeText()
+        }
 
     private fun welcomeText(): String {
         return String.format(resources.getString(R.string.welcome), name)
@@ -47,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         binding.clickButton.setOnClickListener {
             count++;
         }
-        binding.rollDiceButton.setOnClickListener{
+        binding.rollDiceButton.setOnClickListener {
             rollDice();
         }
         binding.updateNameButton.setOnClickListener {
@@ -57,6 +59,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateName() {
         name = binding.nameInput.text.toString()
+        binding.nameInput.text.clear()
+        binding.nameInput.clearFocus()
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(binding.nameInput.windowToken, 0)
     }
 
     private fun rollDice() {
