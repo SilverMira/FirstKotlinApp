@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Mira/AndroidStudioProjects/Practicals/DiceRoller/app/src/main/res/layout/activity_main.xml" value="0.153125" />
+        <entry key="..\:/Users/Mira/AndroidStudioProjects/Practicals/DiceRoller/app/src/main/res/layout/content_main.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Mira/AndroidStudioProjects/Practicals/DiceRoller/app/src/main/res/layout/fragment_first.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Mira/AndroidStudioProjects/Practicals/DiceRoller/app/src/main/res/menu/menu_main.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/DiceRoller/app/src/main/res/layout/activity_main.xml" value="0.153125" />
         <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/drawable/dice_1.xml" value="0.1" />
         <entry key="..\:/Users/Mira/AndroidStudioProjects/helloworld/app/src/main/res/drawable/dice_2.xml" value="0.194" />
