@@ -12,18 +12,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private var count = 0
-        set(value) {
-            field = value
-            binding.clickButton.text = String.format(getString(R.string.num_clicks), value)
-        };
-
-    private var name = ""
-        set(value) {
-            field = value
-            binding.welcomeText.text = String.format(getString(R.string.welcome), value)
-        }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -32,13 +20,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initState() {
-        count = 0
-        name = ""
+        binding.gameInfo = GameInfo().also { gameInfo ->
+            gameInfo.playerName.set("Player one")
+            gameInfo.counter.set(0)
+            gameInfo.score.set(0)
+        }
     }
 
     private fun registerListeners() {
         binding.clickButton.setOnClickListener {
-            count++;
+            binding.gameInfo?.counter.also { counter ->
+                counter?.set(counter.get()?.plus(1))
+            };
         }
         binding.rollDiceButton.setOnClickListener {
             rollDice();
@@ -49,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun updateName() {
-        name = binding.nameInput.text.toString()
+        binding.gameInfo?.playerName!!.set(binding.nameInput.text.toString())
         binding.nameInput.text.clear()
         binding.nameInput.clearFocus()
         val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
