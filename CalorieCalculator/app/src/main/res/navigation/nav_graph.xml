@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/calorieCalculatorFragment">
+    <fragment
+        android:id="@+id/calorieCalculatorFragment"
+        android:name="com.practical.calorie_calculator.CalorieCalculatorFragment"
+        android:label="Calorie Calculator"
+        tools:layout="@layout/fragment_calorie_calculator" />
+</navigation>

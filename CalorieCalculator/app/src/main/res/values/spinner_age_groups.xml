@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="age_groups">
+        <item>@string/age_group_19_30</item>
+        <item>@string/age_group_31_59</item>
+        <item>@string/age_group_60plus</item>
+    </string-array>
+</resources>
