@@ -8,11 +8,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.android.navigation.databinding.FragmentTitleBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [TitleFragment.newInstance] factory method to
@@ -31,7 +26,7 @@ class TitleFragment : Fragment() {
             false
         )
         binding.playButton.setOnClickListener {
-            requireView().findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+            requireView().findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         }
         setHasOptionsMenu(true)
         return binding.root
