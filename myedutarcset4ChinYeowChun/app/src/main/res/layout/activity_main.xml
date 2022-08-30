@@ -1,222 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/carRegistrationTextInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Car Registration Number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/engineCapacityLabelTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Engine Capacity"
-        app:layout_constraintEnd_toEndOf="@id/carRegistrationTextInputLayout"
-        app:layout_constraintStart_toStartOf="@id/carRegistrationTextInputLayout"
-        app:layout_constraintTop_toBottomOf="@id/carRegistrationTextInputLayout" />
-
-    <Spinner
-        android:id="@+id/engineCapacitySpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="16dp"
-        app:layout_constraintEnd_toEndOf="@id/engineCapacityLabelTextView"
-        app:layout_constraintStart_toStartOf="@id/engineCapacityLabelTextView"
-        app:layout_constraintTop_toBottomOf="@id/engineCapacityLabelTextView"
-        tools:listitem="@android:layout/simple_spinner_item" />
-
-    <TextView
-        android:id="@+id/stateLabelTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="State"
-        app:layout_constraintEnd_toEndOf="@id/stateErrorTextView"
-        app:layout_constraintStart_toStartOf="@id/engineCapacitySpinner"
-        app:layout_constraintTop_toBottomOf="@id/engineCapacitySpinner" />
-
-    <TextView
-        android:id="@+id/stateErrorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/design_default_color_error"
-        app:layout_constraintBottom_toBottomOf="@id/stateLabelTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/stateLabelTextView"
-        tools:text="Error" />
-
-    <RadioGroup
-        android:id="@+id/stateRadioGroup"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@id/stateLabelTextView"
-        app:layout_constraintStart_toStartOf="@id/stateLabelTextView"
-        app:layout_constraintTop_toBottomOf="@id/stateLabelTextView">
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/stateRadioButton_Peninsular"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/state_peninsular" />
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/stateRadioButton_SabahSarawak"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/state_sabah_sarawak" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/calculateRoadTaxButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
-        app:layout_constraintEnd_toEndOf="@id/stateRadioGroup"
-        app:layout_constraintTop_toBottomOf="@id/stateRadioGroup" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/roadTaxCardView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardElevation="5dp"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="@id/stateRadioGroup"
-        app:layout_constraintStart_toStartOf="@id/stateRadioGroup"
-        app:layout_constraintTop_toBottomOf="@id/calculateRoadTaxButton">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <TextView
-                android:id="@+id/roadTaxCardTitle"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/carRegistrationTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Road Tax"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:hint="Car Registration Number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/roadTaxCardRegistration"
-                android:layout_width="wrap_content"
+                android:id="@+id/engineCapacityLabelTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Car Registration: "
-                app:layout_constraintStart_toStartOf="@id/roadTaxCardTitle"
-                app:layout_constraintTop_toBottomOf="@id/roadTaxCardTitle" />
+                android:text="Engine Capacity"
+                app:layout_constraintEnd_toEndOf="@id/carRegistrationTextInputLayout"
+                app:layout_constraintStart_toStartOf="@id/carRegistrationTextInputLayout"
+                app:layout_constraintTop_toBottomOf="@id/carRegistrationTextInputLayout" />
+
+            <Spinner
+                android:id="@+id/engineCapacitySpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="16dp"
+                app:layout_constraintEnd_toEndOf="@id/engineCapacityLabelTextView"
+                app:layout_constraintStart_toStartOf="@id/engineCapacityLabelTextView"
+                app:layout_constraintTop_toBottomOf="@id/engineCapacityLabelTextView"
+                tools:listitem="@android:layout/simple_spinner_item" />
 
             <TextView
-                android:id="@+id/roadTaxCardRegistrationValue"
-                android:layout_width="wrap_content"
+                android:id="@+id/stateLabelTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@id/roadTaxCardRegistration"
-                app:layout_constraintStart_toEndOf="@id/roadTaxCardRegistration"
-                app:layout_constraintTop_toTopOf="@id/roadTaxCardRegistration"
-                tools:text="123456" />
+                android:layout_marginTop="16dp"
+                android:text="State"
+                app:layout_constraintEnd_toEndOf="@id/stateErrorTextView"
+                app:layout_constraintStart_toStartOf="@id/engineCapacitySpinner"
+                app:layout_constraintTop_toBottomOf="@id/engineCapacitySpinner" />
 
             <TextView
-                android:id="@+id/roadTaxCardState"
+                android:id="@+id/stateErrorTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="State: "
-                app:layout_constraintStart_toStartOf="@id/roadTaxCardRegistration"
-                app:layout_constraintTop_toBottomOf="@id/roadTaxCardRegistration" />
+                android:textColor="@color/design_default_color_error"
+                app:layout_constraintBottom_toBottomOf="@id/stateLabelTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/stateLabelTextView"
+                tools:text="Error" />
+
+            <RadioGroup
+                android:id="@+id/stateRadioGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/stateLabelTextView"
+                app:layout_constraintStart_toStartOf="@id/stateLabelTextView"
+                app:layout_constraintTop_toBottomOf="@id/stateLabelTextView">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/stateRadioButton_Peninsular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/state_peninsular" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/stateRadioButton_SabahSarawak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/state_sabah_sarawak" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/calculateRoadTaxButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calculate"
+                app:layout_constraintEnd_toEndOf="@id/stateRadioGroup"
+                app:layout_constraintTop_toBottomOf="@id/stateRadioGroup" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/roadTaxCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardElevation="5dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="@id/stateRadioGroup"
+                app:layout_constraintStart_toStartOf="@id/stateRadioGroup"
+                app:layout_constraintTop_toBottomOf="@id/calculateRoadTaxButton">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/roadTaxCardTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Road Tax"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/roadTaxCardRegistration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Car Registration: "
+                        app:layout_constraintStart_toStartOf="@id/roadTaxCardTitle"
+                        app:layout_constraintTop_toBottomOf="@id/roadTaxCardTitle" />
+
+                    <TextView
+                        android:id="@+id/roadTaxCardRegistrationValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/roadTaxCardRegistration"
+                        app:layout_constraintStart_toEndOf="@id/roadTaxCardRegistration"
+                        app:layout_constraintTop_toTopOf="@id/roadTaxCardRegistration"
+                        tools:text="123456" />
+
+                    <TextView
+                        android:id="@+id/roadTaxCardState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="State: "
+                        app:layout_constraintStart_toStartOf="@id/roadTaxCardRegistration"
+                        app:layout_constraintTop_toBottomOf="@id/roadTaxCardRegistration" />
+
+                    <TextView
+                        android:id="@+id/roadTaxCardStateValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/roadTaxCardState"
+                        app:layout_constraintStart_toEndOf="@id/roadTaxCardState"
+                        app:layout_constraintTop_toTopOf="@id/roadTaxCardState"
+                        tools:text="Peninsular" />
+
+                    <TextView
+                        android:id="@+id/roadTaxCardEngine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Engine Capacity (cc): "
+                        app:layout_constraintStart_toStartOf="@id/roadTaxCardState"
+                        app:layout_constraintTop_toBottomOf="@id/roadTaxCardState" />
+
+                    <TextView
+                        android:id="@+id/roadTaxCardEngineValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/roadTaxCardEngine"
+                        app:layout_constraintStart_toEndOf="@id/roadTaxCardEngine"
+                        app:layout_constraintTop_toTopOf="@id/roadTaxCardEngine"
+                        tools:text="1,000 and below" />
+
+                    <TextView
+                        android:id="@+id/roadTaxCardAmountPrefix"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount: RM"
+                        app:layout_constraintStart_toStartOf="@id/roadTaxCardEngine"
+                        app:layout_constraintTop_toBottomOf="@id/roadTaxCardEngine" />
+
+
+                    <TextView
+                        android:id="@+id/roadTaxCardAmountValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/roadTaxCardAmountPrefix"
+                        app:layout_constraintStart_toEndOf="@id/roadTaxCardAmountPrefix"
+                        app:layout_constraintTop_toTopOf="@id/roadTaxCardAmountPrefix"
+                        tools:text="109.00" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/roadTaxCardStateValue"
+                android:id="@+id/contactSectionHeaderTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Contact Malaysian Road Transport Department"
+                app:layout_constraintEnd_toEndOf="@id/roadTaxCardView"
+                app:layout_constraintStart_toStartOf="@id/roadTaxCardView"
+                app:layout_constraintTop_toBottomOf="@id/roadTaxCardView" />
+
+            <Button
+                android:id="@+id/contactEmailButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@id/roadTaxCardState"
-                app:layout_constraintStart_toEndOf="@id/roadTaxCardState"
-                app:layout_constraintTop_toTopOf="@id/roadTaxCardState"
-                tools:text="Peninsular" />
+                android:layout_marginTop="8dp"
+                android:text="Email"
+                app:layout_constraintStart_toStartOf="@id/contactSectionHeaderTextView"
+                app:layout_constraintTop_toBottomOf="@id/contactSectionHeaderTextView" />
 
-            <TextView
-                android:id="@+id/roadTaxCardEngine"
+            <Button
+                android:id="@+id/contactPhoneButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Engine Capacity (cc): "
-                app:layout_constraintStart_toStartOf="@id/roadTaxCardState"
-                app:layout_constraintTop_toBottomOf="@id/roadTaxCardState" />
+                android:layout_marginStart="16dp"
+                android:text="Phone"
+                app:layout_constraintBottom_toBottomOf="@id/contactEmailButton"
+                app:layout_constraintStart_toEndOf="@id/contactEmailButton"
+                app:layout_constraintTop_toTopOf="@id/contactEmailButton" />
 
-            <TextView
-                android:id="@+id/roadTaxCardEngineValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@id/roadTaxCardEngine"
-                app:layout_constraintStart_toEndOf="@id/roadTaxCardEngine"
-                app:layout_constraintTop_toTopOf="@id/roadTaxCardEngine"
-                tools:text="1,000 and below" />
-
-            <TextView
-                android:id="@+id/roadTaxCardAmountPrefix"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Amount: RM"
-                app:layout_constraintStart_toStartOf="@id/roadTaxCardEngine"
-                app:layout_constraintTop_toBottomOf="@id/roadTaxCardEngine" />
-
-
-            <TextView
-                android:id="@+id/roadTaxCardAmountValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@id/roadTaxCardAmountPrefix"
-                app:layout_constraintStart_toEndOf="@id/roadTaxCardAmountPrefix"
-                app:layout_constraintTop_toTopOf="@id/roadTaxCardAmountPrefix"
-                tools:text="109.00" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/contactSectionHeaderTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Contact Malaysian Road Transport Department"
-        app:layout_constraintEnd_toEndOf="@id/roadTaxCardView"
-        app:layout_constraintStart_toStartOf="@id/roadTaxCardView"
-        app:layout_constraintTop_toBottomOf="@id/roadTaxCardView" />
-
-    <Button
-        android:id="@+id/contactEmailButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Email"
-        app:layout_constraintStart_toStartOf="@id/contactSectionHeaderTextView"
-        app:layout_constraintTop_toBottomOf="@id/contactSectionHeaderTextView" />
-
-    <Button
-        android:id="@+id/contactPhoneButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Phone"
-        app:layout_constraintBottom_toBottomOf="@id/contactEmailButton"
-        app:layout_constraintStart_toEndOf="@id/contactEmailButton"
-        app:layout_constraintTop_toTopOf="@id/contactEmailButton" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>
