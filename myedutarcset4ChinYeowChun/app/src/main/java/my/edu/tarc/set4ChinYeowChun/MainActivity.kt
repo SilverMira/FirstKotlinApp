@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun contactEmail() {
-        Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:")).apply {
+        Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:chinyeowchun@gmail.com")).apply {
             putExtra(Intent.EXTRA_EMAIL, "chinyeowchun@gmail.com")
         }.also {
             startActivity(it)
