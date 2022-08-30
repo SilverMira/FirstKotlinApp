@@ -35,9 +35,11 @@
         android:id="@+id/engineCapacitySpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingVertical="16dp"
         app:layout_constraintEnd_toEndOf="@id/engineCapacityLabelTextView"
         app:layout_constraintStart_toStartOf="@id/engineCapacityLabelTextView"
-        app:layout_constraintTop_toBottomOf="@id/engineCapacityLabelTextView" />
+        app:layout_constraintTop_toBottomOf="@id/engineCapacityLabelTextView"
+        tools:listitem="@android:layout/simple_spinner_item" />
 
     <TextView
         android:id="@+id/stateLabelTextView"
@@ -45,9 +47,19 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="State"
-        app:layout_constraintEnd_toEndOf="@id/engineCapacitySpinner"
+        app:layout_constraintEnd_toEndOf="@id/stateErrorTextView"
         app:layout_constraintStart_toStartOf="@id/engineCapacitySpinner"
         app:layout_constraintTop_toBottomOf="@id/engineCapacitySpinner" />
+
+    <TextView
+        android:id="@+id/stateErrorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toBottomOf="@id/stateLabelTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/stateLabelTextView"
+        tools:text="Error" />
 
     <RadioGroup
         android:id="@+id/stateRadioGroup"
@@ -57,15 +69,15 @@
         app:layout_constraintStart_toStartOf="@id/stateLabelTextView"
         app:layout_constraintTop_toBottomOf="@id/stateLabelTextView">
 
-        <RadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/stateRadioButton_Peninsular"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/state_peninsular" />
 
-        <RadioButton
+        <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/stateRadioButton_SabahSarawak"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/state_sabah_sarawak" />
     </RadioGroup>
@@ -105,13 +117,65 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/roadTaxCardAmountPrefix"
+                android:id="@+id/roadTaxCardRegistration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="RM"
+                android:text="Car Registration: "
                 app:layout_constraintStart_toStartOf="@id/roadTaxCardTitle"
                 app:layout_constraintTop_toBottomOf="@id/roadTaxCardTitle" />
+
+            <TextView
+                android:id="@+id/roadTaxCardRegistrationValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/roadTaxCardRegistration"
+                app:layout_constraintStart_toEndOf="@id/roadTaxCardRegistration"
+                app:layout_constraintTop_toTopOf="@id/roadTaxCardRegistration"
+                tools:text="123456" />
+
+            <TextView
+                android:id="@+id/roadTaxCardState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="State: "
+                app:layout_constraintStart_toStartOf="@id/roadTaxCardRegistration"
+                app:layout_constraintTop_toBottomOf="@id/roadTaxCardRegistration" />
+
+            <TextView
+                android:id="@+id/roadTaxCardStateValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/roadTaxCardState"
+                app:layout_constraintStart_toEndOf="@id/roadTaxCardState"
+                app:layout_constraintTop_toTopOf="@id/roadTaxCardState"
+                tools:text="Peninsular" />
+
+            <TextView
+                android:id="@+id/roadTaxCardEngine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Engine Capacity (cc): "
+                app:layout_constraintStart_toStartOf="@id/roadTaxCardState"
+                app:layout_constraintTop_toBottomOf="@id/roadTaxCardState" />
+
+            <TextView
+                android:id="@+id/roadTaxCardEngineValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/roadTaxCardEngine"
+                app:layout_constraintStart_toEndOf="@id/roadTaxCardEngine"
+                app:layout_constraintTop_toTopOf="@id/roadTaxCardEngine"
+                tools:text="1,000 and below" />
+
+            <TextView
+                android:id="@+id/roadTaxCardAmountPrefix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount: RM"
+                app:layout_constraintStart_toStartOf="@id/roadTaxCardEngine"
+                app:layout_constraintTop_toBottomOf="@id/roadTaxCardEngine" />
+
 
             <TextView
                 android:id="@+id/roadTaxCardAmountValue"

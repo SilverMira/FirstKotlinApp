@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Road Tax Calculator</string>
+    <string name="state_required_error">State is required</string>
 </resources>
