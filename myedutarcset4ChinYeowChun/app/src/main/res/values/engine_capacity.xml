@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="engine_cc_1000_below">1,000 and below</string>
+    <string name="engine_cc_1001_1200">1,001 to 1,200</string>
+    <string name="engine_cc_1201_1400">1,201 to 1,400</string>
+    <string name="engine_cc_1401_1600">1,401 to 1,600</string>
+    <string name="engine_cc_1601_above">1,601 and above</string>
+    <string-array name="engine_ccs">
+        <item>@string/engine_cc_1000_below</item>
+        <item>@string/engine_cc_1001_1200</item>
+        <item>@string/engine_cc_1201_1400</item>
+        <item>@string/engine_cc_1401_1600</item>
+        <item>@string/engine_cc_1601_above</item>
+    </string-array>
+</resources>

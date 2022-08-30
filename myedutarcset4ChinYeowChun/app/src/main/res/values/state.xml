@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="state_peninsular">Peninsular Malaysia</string>
+    <string name="state_sabah_sarawak">Sabah and Sarawak</string>
+    <string-array name="states">
+        <item>@string/state_peninsular</item>
+        <item>@string/state_sabah_sarawak</item>
+    </string-array>
+</resources>
