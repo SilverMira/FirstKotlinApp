@@ -43,7 +43,7 @@ class GameFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate(
@@ -55,41 +55,18 @@ class GameFragment : Fragment() {
 
         Log.i("GameFragment", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java).also { viewModel ->
-            viewModel.score.observe(viewLifecycleOwner) { newScore ->
-                binding.scoreText.text = newScore.toString()
-            }
-            viewModel.word.observe(viewLifecycleOwner) { newWord ->
-                binding.wordText.text = newWord
-            }
             viewModel.eventGameFinish.observe(viewLifecycleOwner) { hasFinished ->
-                if(hasFinished) gameFinished()
+                if (hasFinished) gameFinished()
             }
         }
 
-        binding.correctButton.setOnClickListener { onCorrect() }
-        binding.skipButton.setOnClickListener { onSkip() }
-        binding.endGameButton.setOnClickListener { onEndGame() }
+        binding.gameViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
         updateScoreText()
         updateWordText()
         return binding.root
 
     }
-
-
-    /** Methods for buttons presses **/
-
-    private fun onSkip() {
-        viewModel.onSkip()
-        updateWordText()
-        updateScoreText()
-    }
-
-    private fun onCorrect() {
-        viewModel.onCorrect()
-        updateWordText()
-        updateScoreText()
-    }
-
 
     /** Methods for updating the UI **/
 
@@ -99,10 +76,6 @@ class GameFragment : Fragment() {
 
     private fun updateScoreText() {
         binding.scoreText.text = viewModel.score.value.toString()
-    }
-
-    private fun onEndGame() {
-        gameFinished()
     }
 
     private fun gameFinished() {
