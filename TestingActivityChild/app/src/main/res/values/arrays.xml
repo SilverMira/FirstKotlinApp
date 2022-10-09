@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="campus_kuala_lumpur">Kuala Lumpur</string>
+    <string name="campus_johor_bahru">Johor Bahru</string>
+    <string-array name="campus">
+        <item>@string/campus_kuala_lumpur</item>
+        <item>@string/campus_johor_bahru</item>
+    </string-array>
+</resources>

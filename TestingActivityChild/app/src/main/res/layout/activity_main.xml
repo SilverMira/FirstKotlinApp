@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameTextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:maxLength="50"
+            android:id="@+id/nameTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/campusLabelTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Campus"
+        app:layout_constraintEnd_toEndOf="@id/nameTextInputLayout"
+        app:layout_constraintStart_toStartOf="@id/nameTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout" />
+
+    <Spinner
+        android:id="@+id/campusSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/campusLabelTextView"
+        app:layout_constraintStart_toStartOf="@id/campusLabelTextView"
+        app:layout_constraintTop_toBottomOf="@id/campusLabelTextView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cgpaTextInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="CGPA"
+        app:layout_constraintEnd_toEndOf="@id/campusSpinner"
+        app:layout_constraintStart_toStartOf="@id/campusSpinner"
+        app:layout_constraintTop_toBottomOf="@id/campusSpinner">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:maxLength="6"
+            android:inputType="numberDecimal|numberSigned"
+            android:id="@+id/cgpaTextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/cgpaTextInputLayout"
+        app:layout_constraintStart_toStartOf="@id/cgpaTextInputLayout"
+        app:layout_constraintTop_toBottomOf="@id/cgpaTextInputLayout">
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/websiteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Website" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
